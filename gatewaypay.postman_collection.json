@@ -1,0 +1,268 @@
+{
+	"info": {
+		"_postman_id": "84f8d2ae-7bdf-4c69-ac3b-a5c10c1b5165",
+		"name": "gatewaypay",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34715978"
+	},
+	"item": [
+		{
+			"name": "SysPayment",
+			"item": [
+				{
+					"name": "paymentAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-JWT-Assertion",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vd3NvMi5vcmcvY2xhaW1zL2VuZHVzZXIiOiJWSVZFUkVPUkFDTEUvTUlBU0FOVEBjYXJib24uc3VwZXIifQ.Rzy46WS9tyi3z6x5pcD2vtGKmDTEEHJrhG1Bb-a_i-o",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT_TOKEN}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8091/transaction",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"transaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "paymentById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-JWT-Assertion",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vd3NvMi5vcmcvY2xhaW1zL2VuZHVzZXIiOiJWSVZFUkVPUkFDTEUvTUlBU0FOVEBjYXJib24uc3VwZXIifQ.Rzy46WS9tyi3z6x5pcD2vtGKmDTEEHJrhG1Bb-a_i-o",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT_TOKEN}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8091/transaction",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"transaction"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment Card",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/plain;charset=UTF-8",
+						"disabled": true
+					},
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-site"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cardPaymentDTO\": {\r\n        \"token\": \"5eedd4852172fa0c2812171f00923082\",\r\n        \"transactionAmount\": 10000,\r\n        \"installments\": 1,\r\n        \"paymentMethodId\":\"master\",\r\n        \"issuerId\":\"24\"\r\n    },\r\n    \"payerDTO\": {\r\n        \"email\": \"emailtest@gmail.com\",\r\n        \"type\": \"CPF\",\r\n        \"number\": \"12345678909\",\r\n        \"firstName\": \"APROV\"\r\n    },\r\n    \"productDTO\": {\r\n        \"name\": \"Produto Teste\",\r\n        \"id\": \"prod-001\",\r\n        \"description\": \"Descricaoo do produto\",\r\n        \"value\": 150,\r\n        \"mount\": 1\r\n    },\r\n    \"providerType\": \"MERCADOPAGO\",\r\n    \"paymentType\": \"CARD\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8091/payment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"payment"
+					]
+				},
+				"description": "Generated from cURL: curl 'http://localhost:8091/payment' \\\r\n  -H 'Accept: */*' \\\r\n  -H 'Accept-Language: pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7' \\\r\n  -H 'Cache-Control: no-cache' \\\r\n  -H 'Connection: keep-alive' \\\r\n  -H 'Content-Type: text/plain;charset=UTF-8' \\\r\n  -H 'Origin: http://localhost:63342' \\\r\n  -H 'Pragma: no-cache' \\\r\n  -H 'Referer: http://localhost:63342/' \\\r\n  -H 'Sec-Fetch-Dest: empty' \\\r\n  -H 'Sec-Fetch-Mode: cors' \\\r\n  -H 'Sec-Fetch-Site: same-site' \\\r\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36' \\\r\n  -H 'sec-ch-ua: \"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  --data-raw '{\"cardPaymentDTO\":{\"token\":\"76656cfe5319d95e93e5c8ac35232f6c\",\"transactionAmount\":10000,\"installments\":1},\"payerDTO\":{\"email\":\"cliente@exemplo.com\",\"type\":\"CPF\",\"number\":\"12345678909\",\"firstName\":\"JoĆ£o\"},\"productDTO\":{\"name\":\"Produto Teste\",\"id\":\"prod-001\",\"description\":\"DescriĆ§Ć£o do produto\",\"value\":150,\"mount\":1},\"providerType\":\"MERCADOPAGO\",\"paymentType\":\"MASTER\"}'"
+			},
+			"response": []
+		},
+		{
+			"name": "Payment PIX",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-site"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cardPaymentDTO\": {\r\n        \"token\": \"eea5de5f2fd7c82e7a336f427f45d7fd\",\r\n        \"transactionAmount\": 10000,\r\n        \"installments\": 1,\r\n        \"paymentMethodId\":\"master\",\r\n        \"issuerId\":\"24\"\r\n    },\r\n    \"payerDTO\": {\r\n        \"email\": \"emailtest@gmail.com\",\r\n        \"type\": \"CPF\",\r\n        \"number\": \"12345678909\",\r\n        \"firstName\": \"APROV\"\r\n    },\r\n    \"productDTO\": {\r\n        \"name\": \"Produto Teste\",\r\n        \"id\": \"prod-001\",\r\n        \"description\": \"Descricaoo do produto\",\r\n        \"value\": 150,\r\n        \"mount\": 1\r\n    },\r\n    \"providerType\": \"MERCADOPAGO\",\r\n    \"paymentType\": \"PIX\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8091/payment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"payment"
+					]
+				},
+				"description": "Generated from cURL: curl 'http://localhost:8091/payment' \\\r\n  -H 'Accept: */*' \\\r\n  -H 'Accept-Language: pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7' \\\r\n  -H 'Cache-Control: no-cache' \\\r\n  -H 'Connection: keep-alive' \\\r\n  -H 'Content-Type: text/plain;charset=UTF-8' \\\r\n  -H 'Origin: http://localhost:63342' \\\r\n  -H 'Pragma: no-cache' \\\r\n  -H 'Referer: http://localhost:63342/' \\\r\n  -H 'Sec-Fetch-Dest: empty' \\\r\n  -H 'Sec-Fetch-Mode: cors' \\\r\n  -H 'Sec-Fetch-Site: same-site' \\\r\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36' \\\r\n  -H 'sec-ch-ua: \"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  --data-raw '{\"cardPaymentDTO\":{\"token\":\"76656cfe5319d95e93e5c8ac35232f6c\",\"transactionAmount\":10000,\"installments\":1},\"payerDTO\":{\"email\":\"cliente@exemplo.com\",\"type\":\"CPF\",\"number\":\"12345678909\",\"firstName\":\"JoĆ£o\"},\"productDTO\":{\"name\":\"Produto Teste\",\"id\":\"prod-001\",\"description\":\"DescriĆ§Ć£o do produto\",\"value\":150,\"mount\":1},\"providerType\":\"MERCADOPAGO\",\"paymentType\":\"MASTER\"}'"
+			},
+			"response": []
+		}
+	]
+}
